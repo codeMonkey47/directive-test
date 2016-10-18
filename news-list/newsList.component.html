@@ -1,0 +1,9 @@
+<div>
+    <div *ngFor="let item of newsItems">
+        <h3>{{item.title}}</h3>
+        <p [ngClass]="{collapsed: selectedNewsId != item.id }">
+            {{item.body}}
+        </p>
+        <a href (click) = "expandNews(item.id)" *ngIf = "selectedNewsId != item.id">More...</a>
+    </div>
+</div>
